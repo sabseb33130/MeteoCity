@@ -1,0 +1,36 @@
+
+header{
+    background:  #accee7;
+    text-align: center;
+    height: 150px;
+}
+body{
+    background-image: url("./images/sun-clouds.jpg" );
+}
+main{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   margin-top: 50px;
+    
+}
+input {
+margin-top: 50px;
+
+}
+footer{
+    margin-top: 250px;
+}
+div{
+    visibility: hidden;
+}
+
+#ville{
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+#h2{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
