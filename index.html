@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
     <script defer src="./script.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <h1>METEO CITY</h1>
-    <!--ajout de l'horloge--> 
+        <!--ajout de l'horloge-->
     </header>
     <main>
         <h2>Quels temps fait-il ?</h2>
-        <input action="" id="form">
-            <label for="ville"></label>
-            <input type="text" name="ville" id="ville"></input>
-            
-            <input type="submit" class="btn btn-info" aria-placeholder="valid"></input>
-            
+        <form id="form">
+            <input type="text" id="ville"></input>
+            <button id="valid" type="button">GO--></button>
         </form>
-        <div class="condition" id="condition" >
-            <p id="villeChoisie">
-            <i class="bi bi-snow2"></i>neige
-            <i class="bi bi-hurricane"></i>tempète
-            <i class="bi bi-cloud-drizzle"></i>nuagueux
-            <img src="./images/cloud-rain.svg" alt="pluvieux"> pluvieux</p>
-            <i class="bi bi-brightness-high"></i>ensoleillé
-            <p id="temperature"></p>
-            <p id="wind">            
-            </p>
-            <p id="humidity"></p>
-
+        <div id="nomVille"></div>
+        <div>
+            <div id="temp_min"><img id="iTemp_min"></div>
+            <div id="temp" type="text"></div>
+            <div id="temp_max"><img id="iTemp_max"></div>
         </div>
-    <footer>
-        <a href="http://www.freepik.com">Designed by starline / Freepik</a>
-        <p>Les sources de récupération des données météo sont :</p>
-    </footer>    
+        <div>
+            <div id="pressure"></div>
+            <div id="humidity"></div>
+        </div>
+        <div>
+            <div id="wind"></div>
+            <div id="dirWind"></div>
+        </div>
     </main>
 
 </body>
+
 </html>
