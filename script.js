@@ -7,16 +7,25 @@ const pressure = document.getElementById("pressure");
 const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
 const dirWind = document.getElementById("dirWind");
+const Kelvin = 273;
+const form = document.getElementById("form");
+const input = document.getElementById("ville");
+const button = document.getElementById("valid");
 
-
-
-
-
-/*const villeChoix = document.getElementById("ville");
-let choix = villeChoix.ariaValueText;
-console.log(choix);*/ 
-function geoVille(){
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=Toulouse,FR&limit=1&appid=${openID}`)
+form.addEventListener("submit", event =>{
+  event.preventDefault();
+  let textInput =input.value;
+  console.log(textInput);
+  return geoVille(textInput);
+})
+button.addEventListener("click", event =>{
+  event.preventDefault();
+  let textInput =input.value;
+  console.log(textInput);
+  return geoVille(textInput);
+})
+function geoVille(ville){
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${ville},FR&limit=1&appid=${openID}`)
     .then((resp)=> resp.json())
     .then((data) => latlon((data)))  
 };
@@ -37,4 +46,3 @@ function latlon(data){
   const lon = data[0].lon;
   console.log(lon);
 }
-
