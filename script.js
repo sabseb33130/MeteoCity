@@ -11,6 +11,7 @@ const form = document.getElementById("form");
 const input = document.getElementById("ville");
 const button = document.getElementById("valid");
 const nomVille = document.getElementById("nomVille");
+const itemp = document.getElementById("itemp");
 
 form.addEventListener("submit", event =>{
   event.preventDefault();
@@ -25,7 +26,7 @@ button.addEventListener("click", event =>{
   return geoVille(textInput);
 })
 function geoVille(ville){
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${ville},FR&limit=1&appid=${openID}`)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${ville},FR&limit=1&type=municipality&appid=${openID}`)
     .then((resp)=> resp.json())
     .then((data) =>weathVille(data[0].lat,data[0].lon)) 
     //console.log(data[0].lon))
@@ -52,7 +53,8 @@ function meteoGeneral(data1) {
       wind.textContent = `La vitesse du vent est de ${data1.wind.speed}Km/h`;
       dirWind.textContent = `Le sens du vent est ${data1.wind.deg}° et de sens ${test()} `;
       nomVille.textContent = `${data1.name}`;
-  function test(){
+      test1();
+    function test(){
     switch (true) {
       case (data1.wind.deg ==0):
       //console.log("Nord");
@@ -107,4 +109,8 @@ function meteoGeneral(data1) {
       console.log(`Le sens du vent est nul` );
   }
 }
+}
+function test1(itemp) {
+ itemp.setAttribute("src",`http://openweathermap.org/img/wn/${ville}@2x.png`);
+ 
 }
