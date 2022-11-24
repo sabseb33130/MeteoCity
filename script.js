@@ -11,8 +11,9 @@ const form = document.getElementById("form");
 const input = document.getElementById("ville");
 const button = document.getElementById("valid");
 const nomVille = document.getElementById("nomVille");
-const itemp = document.getElementById("itemp");
+let itemp = document.getElementById("itemp");
 
+    
 form.addEventListener("submit", event =>{
   event.preventDefault();
   let textInput =input.value;
@@ -29,7 +30,7 @@ function geoVille(ville){
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${ville},FR&limit=1&type=municipality&appid=${openID}`)
     .then((resp)=> resp.json())
     .then((data) =>weathVille(data[0].lat,data[0].lon)) 
-    //console.log(data[0].lon))
+   // console.log(data))
     .catch((error)=>console.log(error))
     
 };
@@ -38,13 +39,14 @@ function weathVille(lat,lon){
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=f3b93101c2e5243ad953a1d5d8af1da4`)
   .then((resp)=> resp.json())  
   .then((data1) => meteoGeneral(data1))
+ //console.log(data1))
   .catch((error) =>console.log(error));
 
 }
 
 
 function meteoGeneral(data1) {
-      console.log(data1.main.temp,data1.main.temp_max,data1.main.temp_min,data1.main.pressure,data1.main.humidity,data1.wind.deg,data1.wind.speed);
+      console.log(data1.weather[0].icon,data1.main.temp,data1.main.temp_max,data1.main.temp_min,data1.main.pressure,data1.main.humidity,data1.wind.deg,data1.wind.speed);
       temp_min.textContent = `la température minimal est de ${(data1.main.temp_min).toFixed(1)}°C`;
       temp.textContent = `la température est de ${(data1.main.temp .toFixed(1))}°C`;
       temp_max.textContent = `la température maximale est de ${(data1.main.temp_max).toFixed(1)}°C`;
@@ -53,7 +55,9 @@ function meteoGeneral(data1) {
       wind.textContent = `La vitesse du vent est de ${data1.wind.speed}Km/h`;
       dirWind.textContent = `Le sens du vent est ${data1.wind.deg}° et de sens ${test()} `;
       nomVille.textContent = `${data1.name}`;
-      test1();
+      icone = data1.weather[0].icon;
+      console.log(icone);
+      itemp.setAttribute("src",` http://openweathermap.org/img/wn/${data1.weather[0].icon}@2x.png`);
     function test(){
     switch (true) {
       case (data1.wind.deg ==0):
@@ -109,8 +113,6 @@ function meteoGeneral(data1) {
       console.log(`Le sens du vent est nul` );
   }
 }
+
 }
-function test1(itemp) {
- itemp.setAttribute("src",`http://openweathermap.org/img/wn/${ville}@2x.png`);
- 
-}
+

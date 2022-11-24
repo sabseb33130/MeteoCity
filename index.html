@@ -18,31 +18,34 @@
     <title>Document</title>
 </head>
 
-<body>
-    <header>
-        <h1>METEO CITY</h1>
+<body class="container text-center d-flex flex-column mb-3 bg-secondary p-2 text-dark bg-opacity-25">
+    <header >
+        <h1 class="display-1">METEO CITY</h1>
         <!--ajout de l'horloge-->
     </header>
-    <main>
-        <h2>Quels temps fait-il ?</h2>
-        <form id="form">
-            <input type="text" id="ville"></input>
-            <button id="valid" type="button">GO--></button>
-        </form>
-        <div id="nomVille"></div>
-        <div>
-            <div id="temp_min"><img id="iTemp_min"></div>
-            <div id="temp" type="text"></div>
-            <div id="temp_max"><img id="iTemp_max"></div>
-        </div>
-        <div>
-            <div id="pressure"></div>
-            <div id="humidity"></div>
-        </div>
-        <div>
-            <div id="wind"></div>
-            <div id="dirWind"></div>
-        </div>
+    <main >
+        <h2 class="display-4">Quels temps fait-il ?</h2>
+        <form id="form" class="" >
+            <input type="text" id="ville" placeholder="Nom de la ville recherchée" class="opacity-25 " style="width: 250px;"></input>
+            <button id="valid" type="button" class="btn btn-primary" data-bs-toggle="collapse"   >GO--></button>
+            <div class="visually-hidden-clickable">
+                <div id="nomVille" class=" display-4 opacity-50"></div>
+                <div><img id="itemp" ></div>
+                <div class="d-flex align-content-start flex-wrap" >
+                    
+                    <div id="temp_min" class="mx-auto shadow-lg p-3 mb-5 bg-body rounded w-25 p-3" ></div>
+                    <div id="temp" type="text" class="mx-auto shadow-lg p-3 mb-5 bg-body rounded w-25 p-3" ></div>
+                    <div id="temp_max" class="mx-auto shadow-lg p-3 mb-5 bg-body rounded w-25 p-3" ></div>
+                <div class="d-flex align-content-start flex-wrap">
+                    <div id="pressure" class="mx-auto shadow-lg p-3 mb-5 bg-body rounded w-25 p-3"></div>
+                    <div id="humidity" class="mx-auto shadow-lg p-3 mb-5 bg-body rounded w-25 p-3"></div>
+                </div>
+                <div class="d-flex align-content-start flex-wrap" >
+                    <div id="wind" class="mx-auto shadow-lg p-3 mb-5 bg-body rounded w-25 p-3"></div>
+                    <div id="dirWind" class="mx-auto shadow-lg p-3 mb-5 bg-body rounded w-25 p-3"></div>
+                </div>
+                </div>
+            </form>
     </main>
 
 </body>
