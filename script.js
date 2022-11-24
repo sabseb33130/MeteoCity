@@ -27,7 +27,7 @@ button.addEventListener("click", event =>{
   return geoVille(textInput);
 })
 function geoVille(ville){
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${ville},FR&limit=1&type=municipality&appid=${openID}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${ville},FR&limit=1&type=municipality&appid=${openID}`)
     .then((resp)=> resp.json())
     .then((data) =>weathVille(data[0].lat,data[0].lon)) 
    // console.log(data))
@@ -57,7 +57,7 @@ function meteoGeneral(data1) {
       nomVille.textContent = `${data1.name}`;
       icone = data1.weather[0].icon;
       console.log(icone);
-      itemp.setAttribute("src",` http://openweathermap.org/img/wn/${data1.weather[0].icon}@2x.png`);
+      itemp.setAttribute("src",` https://openweathermap.org/img/wn/${data1.weather[0].icon}@2x.png`);
     function test(){
     switch (true) {
       case (data1.wind.deg ==0):
