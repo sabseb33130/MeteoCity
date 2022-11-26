@@ -12,6 +12,7 @@ const input = document.getElementById("ville");
 const button = document.getElementById("valid");
 const nomVille = document.getElementById("nomVille");
 let itemp = document.getElementById("itemp");
+const affichage = document.getElementById("affichage");
 
     
 form.addEventListener("submit", event =>{
@@ -36,7 +37,7 @@ function geoVille(ville){
 };
 
 function weathVille(lat,lon){
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=f3b93101c2e5243ad953a1d5d8af1da4`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${openID}`)
   .then((resp)=> resp.json())  
   .then((data1) => meteoGeneral(data1))
  //console.log(data1))
@@ -53,12 +54,13 @@ function meteoGeneral(data1) {
       pressure.textContent = `la pression atmosphérique est de ${(data1.main.pressure)}Hpa`;
       humidity.textContent = `le taux d'humidité est de ${(data1.main.humidity)}%`;
       wind.textContent = `La vitesse du vent est de ${data1.wind.speed}Km/h`;
-      dirWind.textContent = `Le sens du vent est ${data1.wind.deg}° et de sens ${test()} `;
+      dirWind.textContent = `Le sens du vent est de sens ${sensVent()} `;
       nomVille.textContent = `${data1.name}`;
       icone = data1.weather[0].icon;
       console.log(icone);
       itemp.setAttribute("src",` https://openweathermap.org/img/wn/${data1.weather[0].icon}@2x.png`);
-    function test(){
+      affichage.removeAttribute("class");
+    function sensVent(){
     switch (true) {
       case (data1.wind.deg ==0):
       //console.log("Nord");
@@ -115,4 +117,5 @@ function meteoGeneral(data1) {
 }
 
 }
+
 
