@@ -11,44 +11,53 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script defer src="./script.js"></script>
-    <title>Document</title>
+    <title>Meteo City</title>
 </head>
-<body class="">
-    <header >
+<body>
+    <!--Titre -->
+    <header>
         <div>
         <h1 class="p-3 mb-2 bg-info text-white text-center display-1">METEO CITY</h1>
         </div>
-        <!--ajout de l'horloge-->
     </header>
-    <main >
-        <div>
-        <h2 class="bg-warning p-2 text-secondary bg-opacity-25 text-center display-2">Quels temps fait-il ?</h2>
-        </div>
-        <form id="form" class="container" >
-            <input type="text" id="ville" placeholder="Nom de la ville recherchée" class="opacity-25 " style="width: 250px;"></input>
+    <main>
+        
+        <h2 class="text-center  bg-warning p-2 text-secondary bg-opacity-25 display-2">Quels temps fait-il ?</h2>
+        <!--Formulaire permettant de proposer le choix de la ville et d'afficher les données météo-->
+        <form id="form" >
+            <input type="text" id="ville" placeholder="Nom de la ville recherchée" class="opacity-75" style="width: 250px;"></input>
             <button id="valid" type="button" class="btn btn-primary" data-bs-toggle="collapse"   >GO--></button>
-            <div id="affichage" class="invisible">
-                <div id="nomVille" class="container  shadow p-3 mb-5 bg-body rounded  text-center display-2 "></div>
-                    <div class="" >                    
-                    <div id="temp_min" class="container bg-warning p-2 text-secondary bg-opacity-25 text-center display-2" ></div>
-                    <div id="temp" type="text" class="contaner bg-warning p-2 text-secondary bg-opacity-25 text-center display-2" ></div>
-                    <div id="temp_max" class="container bg-warning p-2 text-secondary bg-opacity-25 text-center display-2" ></div>
-                    
-                    <div class="">
-                    <div id="pressure" class="container bg-warning p-2 text-secondary bg-opacity-25 text-center display-2"></div>
-                    <div id="humidity" class="container bg-warning p-2 text-secondary bg-opacity-25 text-center display-2"></div>
-                </div><div class="container"><img id="itemp" ></div>
-                        <div class="container" >
-                    <div id="wind" class="container bg-warning p-2 text-secondary bg-opacity-25 text-center display-2"></div>
-                    <div id="dirWind" class="container bg-warning p-2 text-secondary bg-opacity-25 text-center display-2"></div>
+        
+        
+            <div id="affichage" class="invisible p-3 mb-2 bg-light">
+                <div class="container text-center">
+                <div class=" row justify-content-cente">
+                <div id="nomVille" class="col-md-12 col-lg-12 col-xs-12 col-sm-12 text-center p-3 mb-2 bg-light display-2"></div>
+                <div><img  class=" col-md-4 col-lg-4 col-xs-12 col-sm-12 " id="itemp" ></div>
                 </div>
+                </div>
+                    <div class=" container text-center mb-2 bg-light"> 
+                    <div class="row"> 
+                    <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 mb-5 "> 
+                    <div id="temp_min" class="  p-3 mb-2 bg-info text-white text-center fs-3 fs-6 rounded-pill" ></div>
+                    <div id="temp" type="text" class=" p-3 mb-2 bg-info text-white text-center fs-3 fs-6 rounded-pill" ></div>
+                    <div id="temp_max" class=" p-3 mb-2 bg-info text-white text-center fs-3 fs-6 rounded-pill" ></div>
+                    <div id="pressure" class=" p-3 mb-2 bg-info text-white text-center fs-3 fs-6 rounded-pill"></div>
+                    <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                    <div id="humidity" class=" p-3 mb-2 bg-info text-white text-center fs-3 fs-6 rounded-pill"></div>
+                    <div id="wind" class="p-3 mb-2 bg-info text-white text-center fs-3 fs-6 rounded-pill"></div>
+                    <div id="dirWind" class="p-3 mb-2 bg-info text-white text-center fs-3 fs-6 rounded-pill"></div>
                 </div>
             </div>
-            </form>
+        </div>
+                </div>
+            </div>
+        </form>
+        
     </main>
 </body>
 
